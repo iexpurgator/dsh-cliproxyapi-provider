@@ -1,41 +1,39 @@
 # CLIProxyAPI Provider for DeepSeek Harness
 
-[English](./README_EN.md) | 简体中文
+Adds a `CLIProxyAPI` model provider based on the OpenAI Responses API to DeepSeek Harness.
 
-为 DeepSeek Harness 添加一个基于 OpenAI Responses API 的 `CLIProxyAPI` 模型供应商。
+The plugin automatically retrieves the model list from CLIProxyAPI, so models do not need to be added or maintained manually.
 
-插件会自动从 CLIProxyAPI 获取模型列表，无需手动添加或维护模型。
+## Usage
 
-## 使用方式
-
-安装插件：
+Install the plugin:
 
 ```powershell
 npx @deepseek-ai/dsh plugin --profile web add github:router-for-me/dsh-cliproxyapi-provider
 ```
 
-启动或重启 DeepSeek Harness Web：
+Start or restart DeepSeek Harness Web:
 
 ```powershell
 npx @deepseek-ai/dsh web
 ```
 
-打开 Harness 后：
+After opening Harness:
 
-1. 在侧边栏打开 **插件** 页面，并选择官方插件列表中的 **CLIProxyAPI**。
-2. 填写 CLIProxyAPI 的 **Base URL**，例如
-   `http://127.0.0.1:8317/v1`。
-3. 填写 **API 密钥**；无鉴权服务可以留空。
-4. 保存配置，模型列表会自动获取并定期刷新；如果模型目录的 `input_modalities` 声明了 `image`，图片输入能力会自动应用到对应型号。若 CLIProxyAPI 未提供此字段，能力按未知处理，不会臆测为支持图片。
+1. Open the sidebar **Plugins** page and select **CLIProxyAPI** from the Official plugins list.
+2. Enter the CLIProxyAPI **Base URL**, for example
+   `http://127.0.0.1:8317/v1`.
+3. Enter the **API key**. Leave it empty if the service does not require authentication.
+4. Save the configuration. The model list will be retrieved automatically and refreshed periodically. Models whose catalog `input_modalities` includes `image` automatically receive image-input support. If CLIProxyAPI omits this field, image support is treated as unknown rather than guessed.
 
-卸载插件：
+Uninstall the plugin:
 
 ```powershell
 npx @deepseek-ai/dsh plugin --profile web remove @router-for-me/dsh-cliproxyapi-provider
 ```
 
-卸载后重启 DeepSeek Harness Web 即可。
+Restart DeepSeek Harness Web after uninstalling the plugin.
 
-## 兼容性
+## Compatibility
 
-此版本面向 DeepSeek Harness `0.2.0-rc.2`。它通过 `plugins.item` 在侧边栏“插件”页面提供官方插件配置项，以 `configForms` 编辑 `llm-pi-ai` 实例配置，并通过 `ctx.remote` 管理凭据与远程模型发现。页面只在 Host 提供 `llm-pi-ai` 配置时显示；模型发现通过 `llm-pi-ai` 命名空间调用该供应商族的发现服务。安装或升级后请重启 Web 进程，使 DSH 载入新的客户端插件包。
+This release targets DeepSeek Harness `0.2.0-rc.2`. It contributes an official plugin configuration page through `plugins.item`, edits the `llm-pi-ai` entry with `configForms`, and uses `ctx.remote` for credentials and model discovery. The page appears only while the Host serves the `llm-pi-ai` configuration entry; model discovery uses the `llm-pi-ai` namespace registered for this provider family. Restart the Web process after installing or upgrading so DSH loads the current client bundle.
