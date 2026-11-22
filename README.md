@@ -34,6 +34,13 @@ npx @deepseek-ai/dsh plugin --profile web remove @iexpurgator/dsh-cliproxyapi-pr
 
 Restart DeepSeek Harness Web after uninstalling the plugin.
 
+## Thinking / reasoning levels
+
+The plugin keeps each model's catalog capabilities in sync. If CLIProxyAPI does not
+declare `supported_reasoning_levels`, DSH will not offer a thinking/effort selector
+for that model. You can enable it manually in **Settings → Models → CLIProxyAPI**
+by adding reasoning levels to the model; those edits are preserved across refreshes.
+
 ## Upgrading from older versions
 
 Older installations were published as `@router-for-me/dsh-cliproxyapi-provider@0.1.0`

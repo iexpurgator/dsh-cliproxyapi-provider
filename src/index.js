@@ -218,12 +218,23 @@ async function profileOf(profile, models, hasApiKey, config) {
     modelOverrides: _previousModelOverrides,
     ...rest
   } = profile
+  // Preserve manually configured reasoning levels when the catalog does not
+  // declare them, so users can enable thinking/effort selection in DSH without
+  // having the periodic refresh wipe their edits.
+  const previousModels = new Map((profile?.models ?? []).map((model) => [model?.id, model]))
+  const mergedModels = models.map((model) => {
+    if (model?.reasoningEfforts !== undefined) return model
+    const previous = previousModels.get(model?.id)
+    return previous?.reasoningEfforts !== undefined
+      ? { ...model, reasoningEfforts: previous.reasoningEfforts }
+      : model
+  })
   const candidate = {
     ...rest,
     displayName: PROVIDER,
     api: 'openai-responses',
     baseURL: normalizedBaseURL(profile.baseURL),
-    models,
+    models: mergedModels,
     defaultContextWindow: config.defaultContextWindow,
     defaultMaxTokens: config.defaultMaxTokens,
     defaultInput: [...config.defaultInput],
