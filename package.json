@@ -1,6 +1,6 @@
 {
   "name": "@router-for-me/dsh-cliproxyapi-provider",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "GUI-configurable CLIProxyAPI Responses provider for DeepSeek Harness",
   "type": "module",
   "main": "./src/index.js",
@@ -31,25 +31,25 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/router-for-me/dsh-cliproxyapi-provider.git"
+    "url": "git+https://github.com/iexpurgator/dsh-cliproxyapi-provider.git"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "^4.0.4",
-    "@deepseek-ai/dsh-credentials": "0.2.0-rc.2",
-    "@deepseek-ai/dsh-llm": "0.2.0-rc.2",
-    "@deepseek-ai/dsh-settings": "0.2.0-rc.2"
+    "@deepseek-ai/dsh-credentials": "0.2.2-rc.5",
+    "@deepseek-ai/dsh-llm": "0.2.2-rc.5",
+    "@deepseek-ai/dsh-settings": "0.2.2-rc.5"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-llm-pi-ai": "0.2.0-rc.2",
-    "@deepseek-ai/dsh-util-values": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-llm-pi-ai": "0.2.2-rc.5",
+    "@deepseek-ai/dsh-util-values": "0.2.2-rc.5",
     "@deepseek-ai/schemastery": "^3.18.2"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-api-remotes": "0.2.0-rc.2",
-    "@deepseek-ai/dsh-client-locale": "0.2.0-rc.2",
-    "@deepseek-ai/dsh-client-ui-settings": "0.2.0-rc.2",
-    "@deepseek-ai/dsh-client-ui-plugin-manager": "0.2.0-rc.2",
-    "@deepseek-ai/dsh-client-ui-slots": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-api-remotes": "0.2.2-rc.5",
+    "@deepseek-ai/dsh-client-locale": "0.2.2-rc.5",
+    "@deepseek-ai/dsh-client-ui-settings": "0.2.2-rc.5",
+    "@deepseek-ai/dsh-client-ui-plugin-manager": "0.2.2-rc.5",
+    "@deepseek-ai/dsh-client-ui-slots": "0.2.2-rc.5",
     "react": "^18.2.0"
   },
   "engines": { "node": ">=22" },

@@ -9,7 +9,7 @@ The plugin automatically retrieves the model list from CLIProxyAPI, so models do
 Install the plugin:
 
 ```powershell
-npx @deepseek-ai/dsh plugin --profile web add github:router-for-me/dsh-cliproxyapi-provider
+npx @deepseek-ai/dsh plugin --profile web add github:iexpurgator/dsh-cliproxyapi-provider
 ```
 
 Start or restart DeepSeek Harness Web:
