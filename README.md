@@ -36,4 +36,4 @@ Restart DeepSeek Harness Web after uninstalling the plugin.
 
 ## Compatibility
 
-This release targets DeepSeek Harness `0.2.0-rc.2`. It contributes an official plugin configuration page through `plugins.item`, edits the `llm-pi-ai` entry with `configForms`, and uses `ctx.remote` for credentials and model discovery. The page appears only while the Host serves the `llm-pi-ai` configuration entry; model discovery uses the `llm-pi-ai` namespace registered for this provider family. Restart the Web process after installing or upgrading so DSH loads the current client bundle.
+This release targets DeepSeek Harness `0.2.2-rc.5`. It contributes an official plugin configuration page through `plugins.item`, edits the `llm-pi-ai` entry with `configForms`, and uses `ctx.remote` for credentials and model discovery. The page appears only while the Host serves the `llm-pi-ai` configuration entry; model discovery uses the `llm-pi-ai` namespace registered for this provider family. Restart the Web process after installing or upgrading so DSH loads the current client bundle.
