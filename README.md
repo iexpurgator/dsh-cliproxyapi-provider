@@ -26,10 +26,10 @@ After opening Harness:
 3. Enter the **API key**. Leave it empty if the service does not require authentication.
 4. Save the configuration. The model list will be retrieved automatically and refreshed periodically. Models whose catalog `input_modalities` includes `image` automatically receive image-input support. If CLIProxyAPI omits this field, image support is treated as unknown rather than guessed.
 
-Uninstall the plugin:
+Uninstall the plugin (use the package name, not the GitHub URL):
 
 ```powershell
-npx @deepseek-ai/dsh plugin --profile web remove @router-for-me/dsh-cliproxyapi-provider
+npx @deepseek-ai/dsh plugin --profile web remove @iexpurgator/dsh-cliproxyapi-provider
 ```
 
 Restart DeepSeek Harness Web after uninstalling the plugin.
